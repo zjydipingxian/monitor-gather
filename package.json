@@ -1,0 +1,54 @@
+{
+  "name": "monitor-gather",
+  "version": "1.0.0",
+  "description": "",
+  "author": "zhongjiayao",
+  "license": "ISC",
+  "keywords": [
+    "encode",
+    "monitor"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "all": "pnpm install",
+    "clean": "pnpm -r --filter=./packages/* run clean",
+    "clearDist": "pnpm -r --filter=./packages/* run clearDist",
+    "build": "pnpm run es-build:prod",
+    "pub": "pnpm run build && pnpm -r --filter=./packages/* publish --access=public",
+    "pub:beta": "pnpm run build && pnpm -r --filter=./packages/* publish --tag beta",
+    "demo": "cross-env NODE_ENV=demo ts-node ./examples/server/index.ts",
+    "dev": "node ./scripts/start.mjs",
+    "ts-types": " tsc --emitDeclarationOnly --outDir dist",
+    "es-build:dev": "node ./scripts/es-build-config.mjs dev && pnpm run ts-types",
+    "es-build:prod": "pnpm run clearDist && node ./scripts/es-build-config.mjs prod && pnpm run ts-types"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.9.2",
+    "@changesets/cli": "^2.27.7",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.2.0",
+    "chalk": "^4.1.2",
+    "chokidar": "^3.6.0",
+    "cli-progress": "^3.12.0",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.23.0",
+    "eslint": "^9.15.0",
+    "eslint-plugin-format": "^0.1.2",
+    "execa": "^6.1.0",
+    "express": "^4.19.2",
+    "minimist": "^1.2.8",
+    "msw": "^2.3.5",
+    "nodemon": "^3.1.4",
+    "open": "^10.1.0",
+    "ora": "^8.0.1",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.4"
+  }
+}

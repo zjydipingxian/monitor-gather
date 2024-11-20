@@ -1,0 +1,38 @@
+{
+  "name": "monitor-core",
+  "version": "0.0.1",
+  "description": "前端稳定性监控 核心功能",
+  "author": "ZhongJiaYao",
+  "license": "ISC",
+  "keywords": [
+    "encode",
+    "monitor",
+    "core"
+  ],
+  "main": "dist/core-global.js",
+  "module": "dist/core-esm.js",
+  "unpkg": "dist/core-global.js",
+  "files": [
+    "README.md",
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf dist node_modules",
+    "clearDist": "rimraf dist"
+  },
+  "buildOptions": {
+    "name": "monitorCore",
+    "formats": [
+      "cjs",
+      "global"
+    ]
+  },
+  "dependencies": {
+    "monitor-shared": "workspace:^",
+    "monitor-types": "workspace:^",
+    "monitor-utils": "workspace:^"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

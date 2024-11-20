@@ -1,0 +1,38 @@
+{
+  "name": "monitor-web-performance",
+  "version": "0.0.1",
+  "description": "前端稳定性监控 Web 性能监控",
+  "author": "ZhongJiaYao",
+  "license": "ISC",
+  "keywords": [
+    "encode",
+    "monitor",
+    "performance",
+    "web 监控"
+  ],
+  "main": "dist/web-performance-global.js",
+  "module": "dist/web-performance-esm.js",
+  "types": "dist/web/types/src/index.d.ts",
+  "files": [
+    "README.md",
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf dist node_modules",
+    "clearDist": "rimraf dist"
+  },
+  "buildOptions": {
+    "name": "monitorWebPerformance",
+    "formats": [
+      "cjs",
+      "global"
+    ]
+  },
+  "dependencies": {
+    "monitor-browser": "workspace:^",
+    "monitor-vue": "workspace:^"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

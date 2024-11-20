@@ -1,0 +1,38 @@
+{
+  "name": "monitor-types",
+  "version": "0.0.1",
+  "description": "前端稳定性监控 通用类型声明",
+  "author": "ZhongJiaYao",
+  "license": "ISC",
+  "keywords": [
+    "encode",
+    "monitor",
+    "types"
+  ],
+  "main": "dist/types-global.js",
+  "module": "dist/types-esm.js",
+  "types": "dist/types/types/src/index.d.ts",
+  "files": [
+    "README.md",
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf dist node_modules",
+    "clearDist": "rimraf dist"
+  },
+  "buildOptions": {
+    "name": "monitorTypes",
+    "formats": [
+      "cjs",
+      "global"
+    ]
+  },
+  "dependencies": {
+    "monitor-core": "workspace:^",
+    "monitor-shared": "workspace:^",
+    "monitor-utils": "workspace:^"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

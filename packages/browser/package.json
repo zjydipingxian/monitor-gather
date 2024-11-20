@@ -1,0 +1,40 @@
+{
+  "name": "monitor-browser",
+  "version": "0.0.1",
+  "description": "前端稳定性监控 页面监控",
+  "author": "ZhongJiaYao",
+  "license": "ISC",
+  "keywords": [
+    "encode",
+    "monitor",
+    "browser"
+  ],
+  "main": "dist/browser-global.js",
+  "module": "dist/browser-esm.js",
+  "unpkg": "dist/browser-global.js",
+  "files": [
+    "README.md",
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf dist node_modules",
+    "clearDist": "rimraf dist"
+  },
+  "buildOptions": {
+    "name": "monitorBrowser",
+    "formats": [
+      "esm-browser",
+      "cjs",
+      "global"
+    ]
+  },
+  "dependencies": {
+    "monitor-core": "workspace:^",
+    "monitor-shared": "workspace:^",
+    "monitor-types": "workspace:^",
+    "monitor-utils": "workspace:^"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

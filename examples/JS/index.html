@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>js 监控测试</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/webDist/web-global.js"></script>
+    <script src="./initMonitor.js"></script>
+  </head>
+
+  <body>
+    <h1>js 监控测试</h1>
+
+    <img
+      style="width: 100px; height: 100%"
+      src="https:11111111"
+      alt="111"
+      srcset=""
+    />
+
+    <button
+      id="codeErr"
+      onclick="codeError()"
+    >
+      代码错误
+    </button>
+    <button
+      id="normalReq"
+      onclick="onClickXhrNormal()"
+    >
+      xhr正常请求
+    </button>
+    <button
+      id="exceptionReq"
+      onclick="onClickXhrError()"
+    >
+      xhr异常请求
+    </button>
+    <button
+      id="logUpload"
+      onclick="monitorLog()"
+    >
+      log上报
+    </button>
+    <button
+      id="promiseError"
+      onclick="promiseError()"
+    >
+      promiseError
+    </button>
+    <script>
+      function codeError() {
+        let a = {}
+        a.split('/')
+      }
+
+      function promiseError() {
+        const promiseWrap = () =>
+          new Promise((resolve, reject) => {
+            reject('promise reject')
+          })
+        promiseWrap().then((res) => {
+          console.log('res', res)
+        })
+      }
+
+      function monitorLog() {
+        monitorWeb.log({ message: { one: 111 }, tag: 'monitor log' })
+      }
+
+      function onClickXhrNormal() {
+        // const xhr = new XMLHttpRequest()
+        // xhr.open('get', '/normal')
+        // xhr.setRequestHeader('content-type', 'application/json')
+        // xhr.send()
+        // xhr.onreadystatechange = function () {
+        //   if (xhr.readyState === 4) {
+        //     console.log(xhr.responseText)
+        //   }
+        // }
+
+        axios
+          .get('/normal')
+          .then(function (response) {
+            console.log(response)
+          })
+          .catch(function (error) {
+            console.log(error)
+          })
+      }
+
+      function onClickXhrError() {
+        axios
+          .get('/exception')
+          .then(function (response) {
+            console.log(response)
+          })
+          .catch(function (error) {
+            console.log(error)
+          })
+        // const xhr = new XMLHttpRequest()
+        // xhr.open('get', '/exception')
+        // xhr.setRequestHeader('content-type', 'application/json')
+        // xhr.send()
+        // xhr.onreadystatechange = function () {
+        //   if (xhr.readyState === 4) {
+        //     console.log(xhr.responseText)
+        //   }
+        // }
+      }
+    </script>
+  </body>
+</html>
