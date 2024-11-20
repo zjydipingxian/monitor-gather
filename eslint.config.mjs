@@ -3,7 +3,6 @@ import antfu from '@antfu/eslint-config'
 export default antfu({
   formatters: true,
   typescript: {
-    tsconfigPath: './tsconfig.json',
     overrides: {
       'n/prefer-global/process': 'off',
     },
@@ -22,5 +21,6 @@ export default antfu({
     '/bin',
     'Dockerfile',
     'scripts/*.mjs',
+    'examples',
   ],
 })
