@@ -20,8 +20,8 @@
     "demo": "cross-env NODE_ENV=demo ts-node ./examples/server/index.ts",
     "dev": "node ./scripts/start.mjs",
     "ts-types": " tsc --emitDeclarationOnly --outDir dist",
-    "es-build:dev": "node ./scripts/es-build-config.mjs dev && pnpm run ts-types",
-    "es-build:prod": "pnpm run clearDist && node ./scripts/es-build-config.mjs prod && pnpm run ts-types"
+    "es-build:dev": "node ./scripts/es-build-config.mjs dev",
+    "es-build:prod": "pnpm run clearDist && node ./scripts/es-build-config.mjs prod"
   },
   "publishConfig": {
     "access": "public",
@@ -37,6 +37,7 @@
     "cli-progress": "^3.12.0",
     "cross-env": "^7.0.3",
     "esbuild": "^0.23.0",
+    "esbuild-plugin-typescript": "2.0.0-next.1",
     "eslint": "^9.15.0",
     "eslint-plugin-format": "^0.1.2",
     "execa": "^6.1.0",

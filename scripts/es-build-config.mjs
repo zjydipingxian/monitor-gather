@@ -7,6 +7,7 @@ import { Presets, SingleBar } from 'cli-progress'
 import esbuild from 'esbuild'
 import minimist from 'minimist'
 import ora from 'ora'
+// import { typescriptPlugin } from 'esbuild-plugin-typescript'
 
 // 根目录
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -60,6 +61,11 @@ async function buildPackage(target) {
           ),
           // 根目录的 tsconfig.json
           tsconfig: resolve(__dirname, '../tsconfig.json'),
+          plugins: [
+            // typescriptPlugin({
+            //   outdir: resolve(__dirname, '../packages', target, 'dist'),
+            // })
+          ]
         }),
       ),
     )
