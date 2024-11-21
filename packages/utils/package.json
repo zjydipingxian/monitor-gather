@@ -28,9 +28,11 @@
     ]
   },
   "dependencies": {
+    "@types/ua-parser-js": "^0.7.36",
     "monitor-core": "workspace:^",
     "monitor-shared": "workspace:^",
-    "monitor-types": "workspace:^"
+    "monitor-types": "workspace:^",
+    "ua-parser-js": "1.0.32"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

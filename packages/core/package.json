@@ -28,6 +28,7 @@
     ]
   },
   "dependencies": {
+    "error-stack-parser": "^2.1.4",
     "monitor-shared": "workspace:^",
     "monitor-types": "workspace:^",
     "monitor-utils": "workspace:^"

@@ -1,18 +1,21 @@
-// window.monitorWeb.init({
-//   apikey: 12312,
-//   silentConsole: true,
-//   maxBreadcrumbs: 10,
-//   dsn: 'http://localhost:2021/errors/upload',
-//   throttleDelayTime: 0,
-//   onRouteChange(from, to) {
-//     console.log('onRouteChange: _', from, to)
-//   },
-//   // beforeDataReport(result, dsn) {
-//   //   console.log('🚀 ~ beforeDataReport ~ result, dsn:', result, dsn)
-//   //   result.zjy = '123123'
-//   //   return result
-//   // },
-//   // configReportUrl(result, dsn) {
-//   //   return 'http://localhost:2021/errors/11111111111111'
-//   // },
-// })
+
+
+window.monitorWeb.init({
+  apiKey: "32323",
+  userId: '123123', // 用户id
+  dsn: 'http://localhost:2021/errors/upload',
+  debug: true,
+  beforeDataReport(data) {
+    data.zjy = '123123'
+    return data
+  },
+  handleHttpStatus(data) {
+    console.log("🚀 ~ handleHttpStatus ~ data:", data)
+    return true
+  }
+})
+
+
+
+
+

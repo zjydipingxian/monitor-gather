@@ -1,13 +1,14 @@
-import fs from 'fs'
-import { createRequire } from 'module'
-import { dirname, resolve } from 'path'
-import { fileURLToPath } from 'url'
-import chokidar from 'chokidar'
-import { Presets, SingleBar } from 'cli-progress'
+import os from 'os'
 import esbuild from 'esbuild'
 import minimist from 'minimist'
+import { dirname, resolve } from 'path'
+import { fileURLToPath } from 'url'
+import { createRequire } from 'module'
+import fs from 'fs-extra'
+import chokidar from 'chokidar'
+
 import ora from 'ora'
-// import { typescriptPlugin } from 'esbuild-plugin-typescript'
+import { SingleBar, Presets } from 'cli-progress'
 
 // 根目录
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -23,17 +24,16 @@ const packagesDir = fs
   })
 
 // 获取当前环境
-// eslint-disable-next-line node/prefer-global/process
 const args = minimist(process.argv.slice(2))
 const env = args._.length ? args._[0] : 'dev'
 const isProduction = env === 'prod'
 // 动态设置并发构建数量
-// const maxConcurrentBuilds = Math.min(os.cpus().length, packagesDir.length)
+const maxConcurrentBuilds = Math.min(os.cpus().length, packagesDir.length)
 
 // 开始记录构建时间
 console.time('Total Build Time')
 
-async function buildPackage(target) {
+const buildPackage = async (target) => {
   const spinner = ora(`Building ${target}...`).start()
 
   // 构建函数
@@ -45,7 +45,7 @@ async function buildPackage(target) {
     const outdir = resolve(__dirname, '../packages', target, 'dist')
 
     await Promise.all(
-      formats.map(format =>
+      formats.map((format) =>
         esbuild.build({
           entryPoints: [
             resolve(__dirname, '../packages', target, 'src', 'index.ts'),
@@ -53,21 +53,16 @@ async function buildPackage(target) {
           bundle: true,
           sourcemap: !isProduction, // 生产环境不生成 sourcemap
           minify: isProduction, // 生产环境进行代码压缩
-          format,
+          format: format,
           globalName: pkg.buildOptions?.name,
           outfile: resolve(
             outdir,
-            `${target}-${format === 'iife' ? 'global' : format}.js`,
+            `${target}-${format === 'iife' ? 'global' : format}.js`
           ),
           // 根目录的 tsconfig.json
           tsconfig: resolve(__dirname, '../tsconfig.json'),
-          plugins: [
-            // typescriptPlugin({
-            //   outdir: resolve(__dirname, '../packages', target, 'dist'),
-            // })
-          ]
-        }),
-      ),
+        })
+      )
     )
 
     spinner.succeed(`Built ${target}`)
@@ -75,8 +70,8 @@ async function buildPackage(target) {
 
   if (!isProduction) {
     // 初始化监听器
-    const watcher = chokidar.watch([`./packages/${target}/src/**/*.ts`], {
-      ignored: /(^|[/\\])\../,
+    const watcher = chokidar.watch(['./packages/' + target + '/src/**/*.ts'], {
+      ignored: /(^|[\/\\])\../,
     })
 
     // 监听文件添加、修改和删除事件
@@ -89,7 +84,7 @@ async function buildPackage(target) {
   await build()
 }
 
-async function buildAllPackages() {
+const buildAllPackages = async () => {
   const progressBar = new SingleBar({}, Presets.shades_classic)
   progressBar.start(packagesDir.length, 0)
 
@@ -105,10 +100,11 @@ async function buildAllPackages() {
   progressBar.stop()
   // 结束记录构建时间
   console.timeEnd('Total Build Time')
+
+  
 }
 
 buildAllPackages().catch((error) => {
   console.error('Error building packages:', error)
-  // eslint-disable-next-line node/prefer-global/process
   process.exit(1)
 })

@@ -1,7 +1,3 @@
-export interface IAnyObject {
-  [key: string]: any
-}
-
-export interface IOptions {
-  appKey: string
-}
+export * from './base'
+export * from './breadcrumb'
+export * from './options'
