@@ -1,4 +1,4 @@
-import type { ReportData } from '@zjy/monitor-types'
+import type { ReportData } from '@zhongjiayao/monitor-types'
 import type { BreadcrumbData } from './breadcrumb'
 
 export interface InitOptions {

@@ -83,16 +83,16 @@ importers:
 
   packages/browser:
     dependencies:
-      '@zjy/monitor-core':
+      '@zhongjiayao/monitor-core':
         specifier: workspace:^
         version: link:../core
-      '@zjy/monitor-shared':
+      '@zhongjiayao/monitor-shared':
         specifier: workspace:^
         version: link:../shared
-      '@zjy/monitor-types':
+      '@zhongjiayao/monitor-types':
         specifier: workspace:^
         version: link:../types
-      '@zjy/monitor-utils':
+      '@zhongjiayao/monitor-utils':
         specifier: workspace:^
         version: link:../utils
       error-stack-parser:
@@ -101,13 +101,13 @@ importers:
 
   packages/core:
     dependencies:
-      '@zjy/monitor-shared':
+      '@zhongjiayao/monitor-shared':
         specifier: workspace:^
         version: link:../shared
-      '@zjy/monitor-types':
+      '@zhongjiayao/monitor-types':
         specifier: workspace:^
         version: link:../types
-      '@zjy/monitor-utils':
+      '@zhongjiayao/monitor-utils':
         specifier: workspace:^
         version: link:../utils
       error-stack-parser:
@@ -122,13 +122,13 @@ importers:
 
   packages/types:
     dependencies:
-      '@zjy/monitor-core':
+      '@zhongjiayao/monitor-core':
         specifier: workspace:^
         version: link:../core
-      '@zjy/monitor-shared':
+      '@zhongjiayao/monitor-shared':
         specifier: workspace:^
         version: link:../shared
-      '@zjy/monitor-utils':
+      '@zhongjiayao/monitor-utils':
         specifier: workspace:^
         version: link:../utils
 
@@ -137,13 +137,13 @@ importers:
       '@types/ua-parser-js':
         specifier: ^0.7.36
         version: 0.7.39
-      '@zjy/monitor-core':
+      '@zhongjiayao/monitor-core':
         specifier: workspace:^
         version: link:../core
-      '@zjy/monitor-shared':
+      '@zhongjiayao/monitor-shared':
         specifier: workspace:^
         version: link:../shared
-      '@zjy/monitor-types':
+      '@zhongjiayao/monitor-types':
         specifier: workspace:^
         version: link:../types
       ua-parser-js:
@@ -152,34 +152,34 @@ importers:
 
   packages/vue:
     dependencies:
-      '@zjy/monitor-core':
+      '@zhongjiayao/monitor-core':
         specifier: workspace:^
         version: link:../core
-      '@zjy/monitor-shared':
+      '@zhongjiayao/monitor-shared':
         specifier: workspace:^
         version: link:../shared
-      '@zjy/monitor-types':
+      '@zhongjiayao/monitor-types':
         specifier: workspace:^
         version: link:../types
-      '@zjy/monitor-utils':
+      '@zhongjiayao/monitor-utils':
         specifier: workspace:^
         version: link:../utils
 
   packages/web:
     dependencies:
-      '@zjy/monitor-browser':
+      '@zhongjiayao/monitor-browser':
         specifier: workspace:^
         version: link:../browser
-      '@zjy/monitor-vue':
+      '@zhongjiayao/monitor-vue':
         specifier: workspace:^
         version: link:../vue
 
   packages/web-performance:
     dependencies:
-      '@zjy/monitor-browser':
+      '@zhongjiayao/monitor-browser':
         specifier: workspace:^
         version: link:../browser
-      '@zjy/monitor-vue':
+      '@zhongjiayao/monitor-vue':
         specifier: workspace:^
         version: link:../vue
 

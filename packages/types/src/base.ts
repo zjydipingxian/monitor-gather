@@ -1,4 +1,4 @@
-import type { EventTypes } from '@zjy/monitor-shared'
+import type { EventTypes } from '@zhongjiayao/monitor-shared'
 import type { BreadcrumbData } from './breadcrumb'
 
 export interface Callback {
