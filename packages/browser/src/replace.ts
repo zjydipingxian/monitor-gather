@@ -1,5 +1,4 @@
 import type { voidFun } from '@null/monitor-shared'
-import { promises } from 'node:dns'
 import { notify, options, subscribeEvent, transportData } from '@null/monitor-core'
 import { EventTypes, HttpTypes } from '@null/monitor-shared'
 import { EMethods, type ReplaceHandler } from '@null/monitor-types'

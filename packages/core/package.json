@@ -1,5 +1,5 @@
 {
-  "name": "'@null/monitor-core",
+  "name": "@null/monitor-core",
   "version": "0.1.0",
   "description": "前端稳定性监控 核心功能",
   "author": "ZhongJiaYao",
@@ -28,9 +28,9 @@
     ]
   },
   "dependencies": {
-    "'@null/monitor-shared": "workspace:^",
-    "'@null/monitor-types": "workspace:^",
-    "'@null/monitor-utils": "workspace:^",
+    "@null/monitor-shared": "workspace:^",
+    "@null/monitor-types": "workspace:^",
+    "@null/monitor-utils": "workspace:^",
     "error-stack-parser": "^2.1.4"
   }
 }
