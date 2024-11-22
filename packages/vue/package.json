@@ -1,6 +1,6 @@
 {
   "name": "@zhongjiayao/monitor-vue",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "前端稳定性监控 Vue 监控",
   "author": "ZhongJiaYao",
   "license": "ISC",

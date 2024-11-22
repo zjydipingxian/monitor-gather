@@ -1,5 +1,11 @@
 # monitor-shared
 
+## 0.1.1
+
+### Patch Changes
+
+- 重新定义包的入口点映射
+
 ## 0.1.0
 
 ### Minor Changes

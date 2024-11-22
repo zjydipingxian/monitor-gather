@@ -1,5 +1,16 @@
 # monitor-vue
 
+## 0.1.1
+
+### Patch Changes
+
+- 重新定义包的入口点映射
+- Updated dependencies
+  - @zhongjiayao/monitor-core@0.1.1
+  - @zhongjiayao/monitor-shared@0.1.1
+  - @zhongjiayao/monitor-types@0.1.1
+  - @zhongjiayao/monitor-utils@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes

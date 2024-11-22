@@ -1,5 +1,14 @@
 # monitor-web
 
+## 0.1.1
+
+### Patch Changes
+
+- 重新定义包的入口点映射
+- Updated dependencies
+  - @zhongjiayao/monitor-browser@0.1.1
+  - @zhongjiayao/monitor-vue@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes
