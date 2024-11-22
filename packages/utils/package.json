@@ -11,7 +11,7 @@
   ],
   "main": "dist/utils-global.js",
   "module": "dist/utils-esm.js",
-  "types": "dist/utils/types/src/index.d.ts",
+  "unpkg": "dist/utils-global.js",
   "files": [
     "README.md",
     "dist"
