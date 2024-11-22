@@ -1,5 +1,17 @@
 # monitor-vue
 
+## 0.1.2
+
+### Patch Changes
+
+- 重构 Vue 插件初始化逻辑 Vue.use() 中传递配置参数
+- Updated dependencies
+  - @zhongjiayao/monitor-browser@0.1.2
+  - @zhongjiayao/monitor-core@0.1.2
+  - @zhongjiayao/monitor-shared@0.1.2
+  - @zhongjiayao/monitor-types@0.1.2
+  - @zhongjiayao/monitor-utils@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes
