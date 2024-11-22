@@ -40,7 +40,7 @@
       function promiseError() {
         const promiseWrap = () =>
           new Promise((resolve, reject) => {
-            reject(new Error('BOOM'));
+            reject('BOOM');
           });
         promiseWrap().then((res) => {
           console.log('res', res);

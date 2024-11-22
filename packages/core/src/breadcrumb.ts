@@ -78,6 +78,9 @@ export class Breadcrumb {
       case EventTypes.ERROR:
         return BreadCrumbTypes.CODE_ERROR
 
+      case EventTypes.VUE:
+        return BreadCrumbTypes.VUE
+
       // 用户自定义
       default:
         return BreadCrumbTypes.CUSTOMER

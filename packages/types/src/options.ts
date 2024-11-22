@@ -7,6 +7,7 @@ export interface InitOptions {
   userId?: string // 用户id
   debug?: boolean // 是否开启调试模式 打印一些信息
   disabled?: boolean // 是否禁用SDK
+  silentConsole?: boolean // 是否静默console
   silentXhr?: boolean // 是否监控 xhr 请求
   silentFetch?: boolean // 是否监控 fetch 请求
   silentClick?: boolean // 是否监控 click 事件

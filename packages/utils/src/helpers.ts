@@ -1,4 +1,5 @@
 import type { Callback, IAnyObject } from 'monitor-types'
+import { globalVar } from 'monitor-shared'
 import { variableTypeDetection } from './is'
 import { logger } from './logger'
 
@@ -85,4 +86,37 @@ export function unknownToString(target: unknown): string {
     return 'undefined'
   }
   return JSON.stringify(target)
+}
+
+export function throttle(fn: any, delay: number) {
+  let canRun = true
+  return function (this: any, ...args: any[]) {
+    if (!canRun)
+      return
+    fn.apply(this, args)
+    canRun = false
+    setTimeout(() => {
+      canRun = true
+    }, delay)
+  }
+}
+
+/**
+ * 获取版本号的主版本号
+ * @param version 版本号
+ * @returns 主版本号
+ */
+export function getBigVersion(version: string) {
+  return Number(version.split('.')[0])
+}
+
+/**
+ * 静默console
+ * @param callback 回调函数
+ */
+// eslint-disable-next-line ts/no-unsafe-function-type
+export function silentConsoleScope(callback: Function) {
+  globalVar.isLogAddBreadcrumb = false
+  callback()
+  globalVar.isLogAddBreadcrumb = true
 }

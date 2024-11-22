@@ -18,9 +18,10 @@ export enum EventTypes {
   UNHANDLEDREJECTION = 'unhandledrejection', // promise
   RESOURCE = 'resource',
   DOM = 'dom',
-  VUE = 'vue',
+  VUE = 'Vue',
   REACT = 'react',
   CUSTOM = 'custom',
+  CONSOLE = 'console',
   PERFORMANCE = 'performance',
   WHITESCREEN = 'whiteScreen',
 }
@@ -43,11 +44,15 @@ export enum STATUS_CODE {
  */
 export enum BreadCrumbTypes {
   HTTP = 'Http',
-  CLICK = 'Click',
-  RESOURCE = 'Resource Error', // 资源加载事件
-  CODE_ERROR = 'Code Error', // 代码错误
+  CLICK = 'click',
   ROUTE = 'Route',
-  CUSTOMER = 'Customer', // 自定义事件
+  CUSTOMER = 'custom', // 自定义事件
+  XHR = 'xhr',
+  FETCH = 'fetch',
+  UNHANDLEDREJECTION = 'unhandledrejection',
+  VUE = 'Vue',
+  RESOURCE = 'resource', // 资源加载事件
+  CODE_ERROR = 'Code Error', // 代码错误
 }
 
 /**
@@ -107,3 +112,9 @@ export enum SpanStatus {
   // 表示数据丢失
   DataLoss = 'data_loss',
 }
+
+const globalVar = {
+  isLogAddBreadcrumb: true,
+  crossOriginThreshold: 1000,
+}
+export { globalVar }

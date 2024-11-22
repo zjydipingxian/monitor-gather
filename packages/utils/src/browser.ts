@@ -1,5 +1,5 @@
 import { EventTypes } from 'monitor-shared'
-import { setFlag } from './global'
+import { _support, setFlag } from './global'
 
 export function setSilentFlag({
   silentXhr = true,
@@ -10,6 +10,7 @@ export function setSilentFlag({
   silentHashchange = true,
   silentUnhandledrejection = true,
   silentWhiteScreen = false,
+  silentConsole = false,
 }): void {
   setFlag(EventTypes.XHR, !silentXhr)
   setFlag(EventTypes.FETCH, !silentFetch)
@@ -19,6 +20,7 @@ export function setSilentFlag({
   setFlag(EventTypes.HASHCHANGE, !silentHashchange)
   setFlag(EventTypes.UNHANDLEDREJECTION, !silentUnhandledrejection)
   setFlag(EventTypes.WHITESCREEN, !silentWhiteScreen)
+  setFlag(EventTypes.CONSOLE, !silentConsole)
 }
 
 export function htmlElementAsString(target: HTMLElement): string {
@@ -62,4 +64,17 @@ export function parseUrlToObj(url: string) {
     protocol: match[2],
     relative: match[5] + query + fragment,
   }
+}
+
+// 对每一个错误详情，生成唯一的编码
+export function getErrorUid(input: string): string {
+  return window.btoa(encodeURIComponent(input))
+}
+
+export function hashMapExist(hash: string): boolean {
+  const exist = _support.errorMap.has(hash)
+  if (!exist) {
+    _support.errorMap.set(hash, true)
+  }
+  return exist
 }

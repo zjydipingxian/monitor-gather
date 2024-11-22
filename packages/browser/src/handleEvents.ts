@@ -1,8 +1,8 @@
 import type { ErrorTarget, HttpData, RouteHistory } from 'monitor-types'
 import ErrorStackParser from 'error-stack-parser'
 import { breadcrumb, httpTransform, options, resourceTransform, transportData } from 'monitor-core'
-import { EventTypes, STATUS_CODE } from 'monitor-shared'
-import { getTimestamp, isError, parseUrlToObj, unknownToString } from 'monitor-utils'
+import { BreadCrumbTypes, EventTypes, STATUS_CODE } from 'monitor-shared'
+import { getErrorUid, getTimestamp, hashMapExist, isError, parseUrlToObj, unknownToString } from 'monitor-utils'
 
 export const HandleEvents = {
   // 处理xhr、fetch回调
@@ -60,8 +60,15 @@ export const HandleEvents = {
         status: STATUS_CODE.ERROR,
       })
 
-      // 上报错误数据
-      return transportData.send(errorData)
+      const hash: string = getErrorUid(
+        `${EventTypes.ERROR}-${ev.message}-${fileName}-${columnNumber}`,
+      )
+
+      // 开启repeatCodeError第一次报错才上报
+      if (!options.repeatCodeError || (options.repeatCodeError && !hashMapExist(hash))) {
+        // 上报错误数据
+        return transportData.send(errorData)
+      }
     }
 
     // 处理资源加载错误(如图片、脚本等)
@@ -119,13 +126,25 @@ export const HandleEvents = {
       // 解析错误堆栈获取文件名、行号、列号等信息
       const stackFrame = ErrorStackParser.parse(ev.reason)[0]
       const { fileName, columnNumber, lineNumber } = stackFrame
-      // 发送包含详细错误位置的数据
-      transportData.send({ ...data, fileName, line: lineNumber, column: columnNumber })
-      return
+
+      const hash: string = getErrorUid(
+        `${EventTypes.UNHANDLEDREJECTION}-${data.message}-${fileName}-${columnNumber}`,
+      )
+      // 开启repeatCodeError第一次报错才上报
+      if (!options.repeatCodeError || (options.repeatCodeError && !hashMapExist(hash))) {
+        // 发送包含详细错误位置的数据
+        transportData.send({ ...data, fileName, line: lineNumber, column: columnNumber })
+        return
+      }
     }
 
-    // 如果不是Error对象,则只发送基础错误数据
-    transportData.send(data)
+    const hash: string = getErrorUid(
+      `${EventTypes.UNHANDLEDREJECTION}-${data.message}`,
+    )
+    if (!options.repeatCodeError || (options.repeatCodeError && !hashMapExist(hash))) {
+      // 如果不是Error对象,则只发送基础错误数据
+      transportData.send(data)
+    }
   },
 
   // 处理 hash模式

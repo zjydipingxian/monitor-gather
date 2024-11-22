@@ -14,8 +14,8 @@ function webInit(options: InitOptions): void {
     return console.error(`缺少必须配置项：${!options.dsn ? 'dsn' : 'apiKey'} `)
   }
 
-  // 检查环境是否支持XMLHttpRequest，以及监控是否被禁用
-  if (!('XMLHttpRequest' in _global) || options.disabled) {
+  // 检查环境是否支持XMLHttpRequest / fetch，以及监控是否被禁用
+  if ((!('XMLHttpRequest' in _global) || !('fetch' in _global)) || options.disabled) {
     return
   }
 

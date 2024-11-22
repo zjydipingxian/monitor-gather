@@ -20,6 +20,7 @@ export interface MonitorSupport {
     [key: string]: any
   }
   breadcrumb: Breadcrumb
+  errorMap: Map<string, boolean>
 }
 
 interface MonitorGlobal {
@@ -60,6 +61,8 @@ _support.deviceInfo = {
   device: uaResult.device.model ? uaResult.device.model : 'Unknow',
   device_type: uaResult.device.type ? uaResult.device.type : 'Pc',
 }
+
+_support.errorMap = new Map()
 
 _support.replaceFlag = _support.replaceFlag || {}
 const replaceFlag = _support.replaceFlag

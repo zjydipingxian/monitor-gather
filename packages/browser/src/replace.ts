@@ -3,7 +3,7 @@ import { promises } from 'node:dns'
 import { notify, options, subscribeEvent, transportData } from 'monitor-core'
 import { EventTypes, HttpTypes } from 'monitor-shared'
 import { EMethods, type ReplaceHandler } from 'monitor-types'
-import { _global, getGlobalMonitorSupport, getLocationHref, getTimestamp, isExistProperty, logger, on, replaceAop, supportsHistory, variableTypeDetection } from 'monitor-utils'
+import { _global, getGlobalMonitorSupport, getLocationHref, getTimestamp, isExistProperty, logger, on, replaceAop, supportsHistory, throttle, variableTypeDetection } from 'monitor-utils'
 
 /**
  * 根据不同的事件类型，调用相应的替换/监听函数
@@ -265,6 +265,9 @@ function domReplace() {
   if (!('document' in _global))
     return
 
+  // 节流，默认0s
+  const clickThrottle = throttle(notify, options.throttleDelayTime)
+
   // 为 document 添加点击事件监听器
   // 参数说明:
   // - _global.document: 监听目标
@@ -275,7 +278,7 @@ function domReplace() {
     _global.document,
     'click',
     function (this: any): void {
-      notify(EventTypes.CLICK, {
+      clickThrottle(EventTypes.CLICK, {
         category: 'click',
         data: this,
       })
