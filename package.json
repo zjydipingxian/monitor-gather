@@ -13,6 +13,8 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "all": "pnpm install",
+    "changeset": "changeset",
+    "packages-version": "changeset version",
     "clean": "pnpm -r --filter=./packages/* run clean",
     "clearDist": "pnpm -r --filter=./packages/* run clearDist",
     "build": "pnpm run es-build:prod",
@@ -30,7 +32,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.9.2",
-    "@changesets/cli": "^2.27.7",
+    "@changesets/cli": "^2.27.9",
     "@types/express": "^4.17.21",
     "@types/node": "^22.2.0",
     "chalk": "^4.1.2",
