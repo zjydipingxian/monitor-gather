@@ -1,5 +1,5 @@
 {
-  "name": "@null/monitor-types",
+  "name": "@zjy/monitor-types",
   "version": "0.1.0",
   "description": "前端稳定性监控 通用类型声明",
   "author": "ZhongJiaYao",
@@ -28,8 +28,8 @@
     ]
   },
   "dependencies": {
-    "@null/monitor-core": "workspace:^",
-    "@null/monitor-shared": "workspace:^",
-    "@null/monitor-utils": "workspace:^"
+    "@zjy/monitor-core": "workspace:^",
+    "@zjy/monitor-shared": "workspace:^",
+    "@zjy/monitor-utils": "workspace:^"
   }
 }

@@ -1,4 +1,4 @@
-import type { voidFun } from '@null/monitor-shared'
+import type { voidFun } from '@zjy/monitor-shared'
 import { _global } from './global'
 
 export class Queue {

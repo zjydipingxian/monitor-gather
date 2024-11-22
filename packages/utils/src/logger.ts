@@ -1,7 +1,7 @@
 import { _global, _support } from './global'
 import { variableTypeDetection } from './is'
 
-const PREFIX = '@null/monitor Logger'
+const PREFIX = '@zjy/monitor Logger'
 export class Logger {
   private enabled = false
   private _console: Console = {} as Console

@@ -1,4 +1,4 @@
-import type { IAnyObject } from '@null/monitor-types'
+import type { IAnyObject } from '@zjy/monitor-types'
 
 export interface VueInstance {
   // 允许添加任意字符串键的属性，值可以是任意类型

@@ -1,5 +1,5 @@
-import type { Callback, IAnyObject } from '@null/monitor-types'
-import { globalVar } from '@null/monitor-shared'
+import type { Callback, IAnyObject } from '@zjy/monitor-types'
+import { globalVar } from '@zjy/monitor-shared'
 import { variableTypeDetection } from './is'
 import { logger } from './logger'
 

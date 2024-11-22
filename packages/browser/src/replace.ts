@@ -1,8 +1,8 @@
-import type { voidFun } from '@null/monitor-shared'
-import { notify, options, subscribeEvent, transportData } from '@null/monitor-core'
-import { EventTypes, HttpTypes } from '@null/monitor-shared'
-import { EMethods, type ReplaceHandler } from '@null/monitor-types'
-import { _global, getGlobalMonitorSupport, getLocationHref, getTimestamp, isExistProperty, logger, on, replaceAop, supportsHistory, throttle, variableTypeDetection } from '@null/monitor-utils'
+import type { voidFun } from '@zjy/monitor-shared'
+import { notify, options, subscribeEvent, transportData } from '@zjy/monitor-core'
+import { EventTypes, HttpTypes } from '@zjy/monitor-shared'
+import { EMethods, type ReplaceHandler } from '@zjy/monitor-types'
+import { _global, getGlobalMonitorSupport, getLocationHref, getTimestamp, isExistProperty, logger, on, replaceAop, supportsHistory, throttle, variableTypeDetection } from '@zjy/monitor-utils'
 
 /**
  * 根据不同的事件类型，调用相应的替换/监听函数

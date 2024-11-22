@@ -1,5 +1,5 @@
-import type { InitOptions } from '@null/monitor-types'
-import { _support, logger, setSilentFlag, validateOption } from '@null/monitor-utils'
+import type { InitOptions } from '@zjy/monitor-types'
+import { _support, logger, setSilentFlag, validateOption } from '@zjy/monitor-utils'
 import { breadcrumb } from './breadcrumb'
 import { transportData } from './reportData'
 

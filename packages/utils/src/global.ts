@@ -1,5 +1,5 @@
-import type { Breadcrumb, TransportData } from '@null/monitor-core'
-import type { EventTypes } from '@null/monitor-shared'
+import type { Breadcrumb, TransportData } from '@zjy/monitor-core'
+import type { EventTypes } from '@zjy/monitor-shared'
 import type { Logger } from './logger'
 import { UAParser } from 'ua-parser-js'
 import { variableTypeDetection } from './is'

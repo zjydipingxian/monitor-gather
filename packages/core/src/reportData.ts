@@ -1,6 +1,6 @@
-import type { InitOptions, ReportData } from '@null/monitor-types'
-import { EventTypes, SDK_VERSION } from '@null/monitor-shared'
-import { _support, generateUUID, getLocationHref, isBrowserEnv, isEmpty, logger, Queue, validateOption } from '@null/monitor-utils'
+import type { InitOptions, ReportData } from '@zjy/monitor-types'
+import { EventTypes, SDK_VERSION } from '@zjy/monitor-shared'
+import { _support, generateUUID, getLocationHref, isBrowserEnv, isEmpty, logger, Queue, validateOption } from '@zjy/monitor-utils'
 import { breadcrumb } from './breadcrumb'
 
 /**
