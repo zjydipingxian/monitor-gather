@@ -1,4 +1,4 @@
-import { name, version } from '../package.json'
+import packageJson from '../package.json'
 
-export const SDK_VERSION = version
-export const SDK_NAME = name
+export const SDK_VERSION = packageJson.version
+export const SDK_NAME = packageJson.name

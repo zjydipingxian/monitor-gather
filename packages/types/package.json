@@ -31,8 +31,5 @@
     "monitor-core": "workspace:^",
     "monitor-shared": "workspace:^",
     "monitor-utils": "workspace:^"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
   }
 }

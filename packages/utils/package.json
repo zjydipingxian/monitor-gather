@@ -33,8 +33,5 @@
     "monitor-shared": "workspace:^",
     "monitor-types": "workspace:^",
     "ua-parser-js": "1.0.32"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
   }
 }

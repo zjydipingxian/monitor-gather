@@ -30,8 +30,5 @@
   "dependencies": {
     "monitor-browser": "workspace:^",
     "monitor-vue": "workspace:^"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
   }
 }

@@ -29,8 +29,5 @@
       "cjs",
       "global"
     ]
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
   }
 }

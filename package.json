@@ -26,10 +26,6 @@
     "es-build:dev": "node ./scripts/es-build-config.mjs dev",
     "es-build:prod": "pnpm run clearDist && node ./scripts/es-build-config.mjs prod"
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "devDependencies": {
     "@antfu/eslint-config": "^3.9.2",
     "@changesets/cli": "^2.27.9",
