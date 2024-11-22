@@ -1,4 +1,6 @@
+import type { InitOptions } from '@zhongjiayao/monitor-types'
 import type { ViewModel, VueInstance } from './types'
+import { init } from '@zhongjiayao/monitor-browser'
 import { EventTypes } from '@zhongjiayao/monitor-shared'
 import { getFlag, setFlag, silentConsoleScope } from '@zhongjiayao/monitor-utils'
 import { handleVueError } from './helper'
@@ -6,7 +8,7 @@ import { handleVueError } from './helper'
 const hasConsole = typeof console !== 'undefined'
 
 const MonitorVue = {
-  install(Vue: VueInstance): void {
+  install(Vue: VueInstance, options: InitOptions): void {
     if (getFlag(EventTypes.VUE) || !Vue || !Vue.config) {
       return
     }
@@ -24,6 +26,8 @@ const MonitorVue = {
         })
       }
     }
+
+    init(options)
   },
 }
 

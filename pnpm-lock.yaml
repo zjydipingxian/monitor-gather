@@ -152,6 +152,9 @@ importers:
 
   packages/vue:
     dependencies:
+      '@zhongjiayao/monitor-browser':
+        specifier: workspace:^
+        version: link:../browser
       '@zhongjiayao/monitor-core':
         specifier: workspace:^
         version: link:../core

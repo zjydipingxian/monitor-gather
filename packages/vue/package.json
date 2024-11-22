@@ -35,6 +35,7 @@
     ]
   },
   "dependencies": {
+    "@zhongjiayao/monitor-browser": "workspace:^",
     "@zhongjiayao/monitor-core": "workspace:^",
     "@zhongjiayao/monitor-shared": "workspace:^",
     "@zhongjiayao/monitor-types": "workspace:^",
