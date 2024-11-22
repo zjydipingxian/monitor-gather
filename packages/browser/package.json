@@ -1,5 +1,5 @@
 {
-  "name": "monitor-browser",
+  "name": "'@null/monitor-browser",
   "version": "0.1.0",
   "description": "前端稳定性监控 页面监控",
   "author": "ZhongJiaYao",
@@ -29,10 +29,10 @@
     ]
   },
   "dependencies": {
-    "error-stack-parser": "^2.1.4",
-    "monitor-core": "workspace:^",
-    "monitor-shared": "workspace:^",
-    "monitor-types": "workspace:^",
-    "monitor-utils": "workspace:^"
+    "'@null/monitor-core": "workspace:^",
+    "'@null/monitor-shared": "workspace:^",
+    "'@null/monitor-types": "workspace:^",
+    "'@null/monitor-utils": "workspace:^",
+    "error-stack-parser": "^2.1.4"
   }
 }

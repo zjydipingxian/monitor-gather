@@ -1,6 +1,6 @@
 import ErrorStackParser from 'error-stack-parser'
-import { EventTypes, STATUS_CODE } from 'monitor-shared'
-import { getTimestamp, isError, logger, unknownToString } from 'monitor-utils'
+import { EventTypes, STATUS_CODE } from '@null/monitor-shared'
+import { getTimestamp, isError, logger, unknownToString } from '@null/monitor-utils'
 import { breadcrumb } from './breadcrumb'
 import { transportData } from './reportData'
 

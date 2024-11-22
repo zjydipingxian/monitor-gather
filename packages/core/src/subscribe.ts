@@ -1,6 +1,6 @@
-import type { EventTypes } from 'monitor-shared'
-import type { ReplaceHandler } from 'monitor-types'
-import { getFlag, nativeTryCatch, setFlag } from 'monitor-utils'
+import type { EventTypes } from '@null/monitor-shared'
+import type { ReplaceHandler } from '@null/monitor-types'
+import { getFlag, nativeTryCatch, setFlag } from '@null/monitor-utils'
 
 type ReplaceCallback = (data: any) => void
 const handlers: { [key in EventTypes]?: ReplaceCallback[] } = {}

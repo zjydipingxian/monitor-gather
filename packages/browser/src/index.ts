@@ -1,7 +1,7 @@
-import type { InitOptions } from 'monitor-types'
-import { initOptions, log } from 'monitor-core'
-import { SDK_NAME, SDK_VERSION } from 'monitor-shared'
-import { _global } from 'monitor-utils'
+import type { InitOptions } from '@null/monitor-types'
+import { initOptions, log } from '@null/monitor-core'
+import { SDK_NAME, SDK_VERSION } from '@null/monitor-shared'
+import { _global } from '@null/monitor-utils'
 import { setupReplace } from './load'
 
 /**

@@ -1,6 +1,6 @@
-import { breadcrumb } from 'monitor-core'
-import { BreadCrumbTypes, EventTypes, STATUS_CODE } from 'monitor-shared'
-import { getTimestamp, htmlElementAsString } from 'monitor-utils'
+import { breadcrumb } from '@null/monitor-core'
+import { BreadCrumbTypes, EventTypes, STATUS_CODE } from '@null/monitor-shared'
+import { getTimestamp, htmlElementAsString } from '@null/monitor-utils'
 import { HandleEvents } from './handleEvents'
 import { addReplaceHandler } from './replace'
 

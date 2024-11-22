@@ -1,5 +1,5 @@
-import type { InitOptions } from 'monitor-types'
-import { _support, logger, setSilentFlag, validateOption } from 'monitor-utils'
+import type { InitOptions } from '@null/monitor-types'
+import { _support, logger, setSilentFlag, validateOption } from '@null/monitor-utils'
 import { breadcrumb } from './breadcrumb'
 import { transportData } from './reportData'
 

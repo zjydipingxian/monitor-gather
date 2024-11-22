@@ -9,7 +9,7 @@
 ### Patch Changes
 
 - Updated dependencies
-  - monitor-core@0.1.0
-  - monitor-shared@0.1.0
-  - monitor-types@0.1.0
-  - monitor-utils@0.1.0
+  - '@null/monitor-core@0.1.0
+  - '@null/monitor-shared@0.1.0
+  - '@null/monitor-types@0.1.0
+  - '@null/monitor-utils@0.1.0

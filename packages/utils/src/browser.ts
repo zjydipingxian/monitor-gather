@@ -1,4 +1,4 @@
-import { EventTypes } from 'monitor-shared'
+import { EventTypes } from '@null/monitor-shared'
 import { _support, setFlag } from './global'
 
 export function setSilentFlag({

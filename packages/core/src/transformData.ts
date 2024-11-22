@@ -1,6 +1,6 @@
-import type { HttpData, ResourceError, ResourceTarget } from 'monitor-types'
-import { HTTP_CODE, STATUS_CODE } from 'monitor-shared'
-import { fromHttpStatus, getTimestamp, interceptStr } from 'monitor-utils'
+import type { HttpData, ResourceError, ResourceTarget } from '@null/monitor-types'
+import { HTTP_CODE, STATUS_CODE } from '@null/monitor-shared'
+import { fromHttpStatus, getTimestamp, interceptStr } from '@null/monitor-utils'
 import { options } from './options'
 
 // 处理接口的状态

@@ -1,5 +1,5 @@
 {
-  "name": "monitor-utils",
+  "name": "'@null/monitor-utils",
   "version": "0.1.0",
   "description": "前端稳定性监控 通用函数",
   "author": "ZhongJiaYao",
@@ -28,10 +28,10 @@
     ]
   },
   "dependencies": {
+    "'@null/monitor-core": "workspace:^",
+    "'@null/monitor-shared": "workspace:^",
+    "'@null/monitor-types": "workspace:^",
     "@types/ua-parser-js": "^0.7.36",
-    "monitor-core": "workspace:^",
-    "monitor-shared": "workspace:^",
-    "monitor-types": "workspace:^",
     "ua-parser-js": "1.0.32"
   }
 }

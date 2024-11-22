@@ -1,4 +1,4 @@
-import type { BreadCrumbTypes, EventTypes, STATUS_CODE } from 'monitor-shared'
+import type { BreadCrumbTypes, EventTypes, STATUS_CODE } from '@null/monitor-shared'
 
 export interface BreadcrumbData {
   type: EventTypes // 事件类型

@@ -1,9 +1,9 @@
-import type { voidFun } from 'monitor-shared'
+import type { voidFun } from '@null/monitor-shared'
 import { promises } from 'node:dns'
-import { notify, options, subscribeEvent, transportData } from 'monitor-core'
-import { EventTypes, HttpTypes } from 'monitor-shared'
-import { EMethods, type ReplaceHandler } from 'monitor-types'
-import { _global, getGlobalMonitorSupport, getLocationHref, getTimestamp, isExistProperty, logger, on, replaceAop, supportsHistory, throttle, variableTypeDetection } from 'monitor-utils'
+import { notify, options, subscribeEvent, transportData } from '@null/monitor-core'
+import { EventTypes, HttpTypes } from '@null/monitor-shared'
+import { EMethods, type ReplaceHandler } from '@null/monitor-types'
+import { _global, getGlobalMonitorSupport, getLocationHref, getTimestamp, isExistProperty, logger, on, replaceAop, supportsHistory, throttle, variableTypeDetection } from '@null/monitor-utils'
 
 /**
  * 根据不同的事件类型，调用相应的替换/监听函数

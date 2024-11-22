@@ -1,5 +1,5 @@
 {
-  "name": "monitor-web-performance",
+  "name": "'@null/monitor-web-performance",
   "version": "0.0.2",
   "private": true,
   "description": "前端稳定性监控 Web 性能监控",
@@ -30,7 +30,7 @@
     ]
   },
   "dependencies": {
-    "monitor-browser": "workspace:^",
-    "monitor-vue": "workspace:^"
+    "'@null/monitor-browser": "workspace:^",
+    "'@null/monitor-vue": "workspace:^"
   }
 }

@@ -1,4 +1,4 @@
-import { SpanStatus } from 'monitor-shared'
+import { SpanStatus } from '@null/monitor-shared'
 
 export function fromHttpStatus(httpStatus: any) {
   if (httpStatus < 400) {
