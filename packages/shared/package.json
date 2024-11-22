@@ -9,7 +9,14 @@
     "monitor",
     "shared"
   ],
-  "main": "dist/shared-global.js",
+  "exports": {
+    ".": {
+      "module": "./dist/shared-esm.js",
+      "import": "./dist/shared-esm.js",
+      "require": "./dist/shared-cjs.js"
+    }
+  },
+  "main": "dist/shared-esm.js",
   "module": "dist/shared-esm.js",
   "unpkg": "dist/shared-global.js",
   "files": [

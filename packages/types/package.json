@@ -9,7 +9,14 @@
     "monitor",
     "types"
   ],
-  "main": "dist/types-global.js",
+  "exports": {
+    ".": {
+      "module": "./dist/types-esm.js",
+      "import": "./dist/types-esm.js",
+      "require": "./dist/types-cjs.js"
+    }
+  },
+  "main": "dist/types-esm.js",
   "module": "dist/types-esm.js",
   "unpkg": "dist/types-global.js",
   "files": [

@@ -9,7 +9,14 @@
     "monitor",
     "core"
   ],
-  "main": "dist/core-global.js",
+  "exports": {
+    ".": {
+      "module": "./dist/core-esm.js",
+      "import": "./dist/core-esm.js",
+      "require": "./dist/core-cjs.js"
+    }
+  },
+  "main": "dist/core-esm.js",
   "module": "dist/core-esm.js",
   "unpkg": "dist/core-global.js",
   "files": [

@@ -9,7 +9,14 @@
     "monitor",
     "browser"
   ],
-  "main": "dist/browser-global.js",
+  "exports": {
+    ".": {
+      "module": "./dist/browser-esm.js",
+      "import": "./dist/browser-esm.js",
+      "require": "./dist/browser-cjs.js"
+    }
+  },
+  "main": "dist/browser-esm.js",
   "module": "dist/browser-esm.js",
   "unpkg": "dist/browser-global.js",
   "files": [

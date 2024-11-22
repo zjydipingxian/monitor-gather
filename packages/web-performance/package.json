@@ -11,7 +11,14 @@
     "performance",
     "web 监控"
   ],
-  "main": "dist/web-performance-global.js",
+  "exports": {
+    ".": {
+      "module": "./dist/web-performance-esm.js",
+      "import": "./dist/web-performance-esm.js",
+      "require": "./dist/web-performance-cjs.js"
+    }
+  },
+  "main": "dist/web-performance-esm.js",
   "module": "dist/web-performance-esm.js",
   "unpkg": "dist/web-performance-global.js",
   "files": [

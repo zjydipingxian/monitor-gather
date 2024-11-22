@@ -9,7 +9,14 @@
     "monitor",
     "Vue 监控"
   ],
-  "main": "dist/vue-global.js",
+  "exports": {
+    ".": {
+      "module": "./dist/vue-esm.js",
+      "import": "./dist/vue-esm.js",
+      "require": "./dist/vue-cjs.js"
+    }
+  },
+  "main": "dist/vue-esm.js",
   "module": "dist/vue-esm.js",
   "unpkg": "dist/vue-global.js",
   "files": [

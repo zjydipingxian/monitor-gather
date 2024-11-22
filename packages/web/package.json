@@ -9,7 +9,14 @@
     "monitor",
     "web 监控"
   ],
-  "main": "dist/web-global.js",
+  "exports": {
+    ".": {
+      "module": "./dist/web-esm.js",
+      "import": "./dist/web-esm.js",
+      "require": "./dist/web-cjs.js"
+    }
+  },
+  "main": "dist/web-esm.js",
   "module": "dist/web-esm.js",
   "unpkg": "dist/web-global.js",
   "files": [
