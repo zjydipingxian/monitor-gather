@@ -9,6 +9,6 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @zjy/monitor-shared@0.1.0
-  - @zjy/monitor-types@0.1.0
-  - @zjy/monitor-utils@0.1.0
+  - @zhongjiayao/monitor-shared@0.1.0
+  - @zhongjiayao/monitor-types@0.1.0
+  - @zhongjiayao/monitor-utils@0.1.0

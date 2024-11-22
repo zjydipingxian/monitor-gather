@@ -1,6 +1,6 @@
 import type { ViewModel, VueInstance } from './types'
-import { EventTypes } from '@zjy/monitor-shared'
-import { getFlag, setFlag, silentConsoleScope } from '@zjy/monitor-utils'
+import { EventTypes } from '@zhongjiayao/monitor-shared'
+import { getFlag, setFlag, silentConsoleScope } from '@zhongjiayao/monitor-utils'
 import { handleVueError } from './helper'
 
 const hasConsole = typeof console !== 'undefined'

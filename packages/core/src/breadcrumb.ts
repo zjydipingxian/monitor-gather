@@ -1,6 +1,6 @@
-import type { BreadcrumbData, InitOptions } from '@zjy/monitor-types'
-import { BreadCrumbTypes, EventTypes } from '@zjy/monitor-shared'
-import { _support, getTimestamp, validateOption } from '@zjy/monitor-utils'
+import type { BreadcrumbData, InitOptions } from '@zhongjiayao/monitor-types'
+import { BreadCrumbTypes, EventTypes } from '@zhongjiayao/monitor-shared'
+import { _support, getTimestamp, validateOption } from '@zhongjiayao/monitor-utils'
 
 export class Breadcrumb {
   maxBreadcrumbs = 20 // 用户行为存放的最大长度

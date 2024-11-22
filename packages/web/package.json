@@ -1,5 +1,5 @@
 {
-  "name": "@zjy/monitor-web",
+  "name": "@zhongjiayao/monitor-web",
   "version": "0.1.0",
   "description": "前端稳定性监控 web 监控",
   "author": "ZhongJiaYao",
@@ -28,7 +28,7 @@
     ]
   },
   "dependencies": {
-    "@zjy/monitor-browser": "workspace:^",
-    "@zjy/monitor-vue": "workspace:^"
+    "@zhongjiayao/monitor-browser": "workspace:^",
+    "@zhongjiayao/monitor-vue": "workspace:^"
   }
 }

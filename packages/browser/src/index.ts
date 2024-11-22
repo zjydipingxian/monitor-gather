@@ -1,7 +1,7 @@
-import type { InitOptions } from '@zjy/monitor-types'
-import { initOptions, log } from '@zjy/monitor-core'
-import { SDK_NAME, SDK_VERSION } from '@zjy/monitor-shared'
-import { _global } from '@zjy/monitor-utils'
+import type { InitOptions } from '@zhongjiayao/monitor-types'
+import { initOptions, log } from '@zhongjiayao/monitor-core'
+import { SDK_NAME, SDK_VERSION } from '@zhongjiayao/monitor-shared'
+import { _global } from '@zhongjiayao/monitor-utils'
 import { setupReplace } from './load'
 
 /**

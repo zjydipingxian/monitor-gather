@@ -1,7 +1,7 @@
 import type { ViewModel, VueInstance } from './types'
-import { breadcrumb, transportData } from '@zjy/monitor-core'
-import { EventTypes, STATUS_CODE } from '@zjy/monitor-shared'
-import { getBigVersion, getLocationHref, getTimestamp, variableTypeDetection } from '@zjy/monitor-utils'
+import { breadcrumb, transportData } from '@zhongjiayao/monitor-core'
+import { EventTypes, STATUS_CODE } from '@zhongjiayao/monitor-shared'
+import { getBigVersion, getLocationHref, getTimestamp, variableTypeDetection } from '@zhongjiayao/monitor-utils'
 
 export function handleVueError(err: Error, vm: ViewModel, info: string, Vue: VueInstance) {
   const version = Vue?.version

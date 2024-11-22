@@ -1,7 +1,7 @@
-import type { ErrorTarget, HttpData, RouteHistory } from '@zjy/monitor-types'
-import { breadcrumb, httpTransform, options, resourceTransform, transportData } from '@zjy/monitor-core'
-import { BreadCrumbTypes, EventTypes, STATUS_CODE } from '@zjy/monitor-shared'
-import { getErrorUid, getTimestamp, hashMapExist, isError, parseUrlToObj, unknownToString } from '@zjy/monitor-utils'
+import type { ErrorTarget, HttpData, RouteHistory } from '@zhongjiayao/monitor-types'
+import { breadcrumb, httpTransform, options, resourceTransform, transportData } from '@zhongjiayao/monitor-core'
+import { BreadCrumbTypes, EventTypes, STATUS_CODE } from '@zhongjiayao/monitor-shared'
+import { getErrorUid, getTimestamp, hashMapExist, isError, parseUrlToObj, unknownToString } from '@zhongjiayao/monitor-utils'
 import ErrorStackParser from 'error-stack-parser'
 
 export const HandleEvents = {
