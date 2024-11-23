@@ -43,7 +43,7 @@ const createRollupConfig = (target) => {
   const formats = [
     {
       format: 'es',  // ES Module 格式
-      file: `packages/${target}/dist/${target}-es.js`
+      file: `packages/${target}/dist/${target}-esm.js`
     },
     {
       format: 'cjs',  // CommonJS 格式

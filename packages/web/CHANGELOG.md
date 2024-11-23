@@ -1,5 +1,14 @@
 # monitor-web
 
+## 0.1.4
+
+### Patch Changes
+
+- 修改 ES Module 构建输出文件名
+- Updated dependencies
+  - @zhongjiayao/monitor-browser@0.1.4
+  - @zhongjiayao/monitor-vue@0.1.4
+
 ## 0.1.3
 
 ### Patch Changes

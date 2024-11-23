@@ -1,5 +1,16 @@
 # monitor-browser
 
+## 0.1.4
+
+### Patch Changes
+
+- 修改 ES Module 构建输出文件名
+- Updated dependencies
+  - @zhongjiayao/monitor-core@0.1.4
+  - @zhongjiayao/monitor-shared@0.1.4
+  - @zhongjiayao/monitor-types@0.1.4
+  - @zhongjiayao/monitor-utils@0.1.4
+
 ## 0.1.3
 
 ### Patch Changes

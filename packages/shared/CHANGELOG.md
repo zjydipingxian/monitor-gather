@@ -1,5 +1,11 @@
 # monitor-shared
 
+## 0.1.4
+
+### Patch Changes
+
+- 修改 ES Module 构建输出文件名
+
 ## 0.1.3
 
 ### Patch Changes
