@@ -1,5 +1,14 @@
 # monitor-web
 
+## 0.1.3
+
+### Patch Changes
+
+- 调整项目结构，适应新的构建流程
+- Updated dependencies
+  - @zhongjiayao/monitor-browser@0.1.3
+  - @zhongjiayao/monitor-vue@0.1.3
+
 ## 0.1.2
 
 ### Patch Changes

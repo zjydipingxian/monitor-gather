@@ -1,6 +1,6 @@
 {
   "name": "@zhongjiayao/monitor-core",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "前端稳定性监控 核心功能",
   "author": "ZhongJiaYao",
   "license": "ISC",

@@ -1,5 +1,13 @@
 # monitor-web-performance
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies
+  - @zhongjiayao/monitor-browser@0.1.3
+  - @zhongjiayao/monitor-vue@0.1.3
+
 ## 0.0.4
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # monitor-shared
 
+## 0.1.3
+
+### Patch Changes
+
+- 调整项目结构，适应新的构建流程
+
 ## 0.1.2
 
 ### Patch Changes
