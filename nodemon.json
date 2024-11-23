@@ -1,4 +1,4 @@
 {
-  "watch": ["./examples/*", "./packages/**/dist"],
+  "watch": ["./examples/*"],
   "exec": "pnpm demo"
 }

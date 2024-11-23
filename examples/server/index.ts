@@ -2,6 +2,7 @@ import express from 'express';
 import http from 'http';
 import { port, FilePaths, ServerUrls } from './config';
 import opn from 'open';
+import chalk from 'chalk';
 const app = express();
 
 const url = `http://localhost:${port}/JS/index.html`;
@@ -34,7 +35,7 @@ const server = http.createServer(app);
 
 server.listen(port, () => {});
 if (process.env.NODE_ENV === 'demo') {
-  console.log('examples is available at: http://localhost:' + port);
+  console.log(chalk.green('examples is available at: http://localhost:' + port));
   // opn(url);
 }
 

@@ -35,5 +35,3 @@ function init(options: InitOptions): void {
 
 // 导出必要的函数和常量
 export { init, log, SDK_NAME, SDK_VERSION }
-
-// 防抖

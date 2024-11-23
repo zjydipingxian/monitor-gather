@@ -16,9 +16,9 @@
       "require": "./dist/types-cjs.js"
     }
   },
-  "main": "dist/types-esm.js",
-  "module": "dist/types-esm.js",
-  "unpkg": "dist/types-global.js",
+  "main": "./dist/types-esm.js",
+  "module": "./dist/types-esm.js",
+  "unpkg": "./dist/types-global.js",
   "files": [
     "README.md",
     "dist"

@@ -11,13 +11,12 @@
     // "disableReferencedProjectLoad": true,             /* Reduce the number of projects loaded automatically by TypeScript. */
 
     /* Language and Environment */
-    "target": "ES2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
-    "lib": ["ES2016", "dom"],
+    "target": "ES2015" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+    "lib": ["ES2015", "dom"],
     // "lib": [],                                        /* Specify a set of bundled library declaration files that describe the target runtime environment. */
     // "jsx": "preserve",                                /* Specify what JSX code is generated. */
     "experimentalDecorators": true /* Enable experimental support for legacy experimental decorators. */,
-    "baseUrl": "./" /* Specify the base directory to resolve non-relative module names. */,
-    "rootDir": "./packages",
+    "baseUrl": "." /* Specify the base directory to resolve non-relative module names. */,
     // "emitDecoratorMetadata": true,                    /* Emit design-type metadata for decorated declarations in source files. */
     // "jsxFactory": "",                                 /* Specify the JSX factory function used when targeting React JSX emit, e.g. 'React.createElement' or 'h'. */
     // "jsxFragmentFactory": "",                         /* Specify the JSX Fragment reference used for fragments when targeting React JSX emit e.g. 'React.Fragment' or 'Fragment'. */
@@ -28,10 +27,10 @@
     // "moduleDetection": "auto",                        /* Control what method is used to detect module-format JS files. */
 
     /* Modules */
-    "module": "commonjs" /* Specify what module code is generated. */, /* Specify the root folder within your source files. */
+    "module": "CommonJS" /* Specify what module code is generated. */, /* Specify the root folder within your source files. */
     "moduleResolution": "Node" /* Specify how TypeScript looks up a file from a given module specifier. */,
     "paths": {
-      "@zhongjiayao/monitor-*": ["packages/*/src/"]
+      "@zhongjiayao/monitor-*": ["packages/*/src"]
     } /* Specify a set of entries that re-map imports to additional lookup locations. */,
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
@@ -44,6 +43,8 @@
     // "customConditions": [],                           /* Conditions to set in addition to the resolver-specific defaults when resolving imports. */
     "resolveJsonModule": true /* Enable importing .json files. */,
 
+    /* Type Checking */
+    "strict": false /* Enable all strict type-checking options. */,
     "allowUnreachableCode": true /* Disable error reporting for unreachable code. */,
     // "noUnusedLocals": true,                           /* Enable error reporting when local variables aren't read. */
     // "noUnusedParameters": true,                       /* Raise an error when a function parameter isn't read. */
@@ -54,8 +55,6 @@
     // "noImplicitOverride": true,                       /* Ensure overriding members in derived classes are marked with an override modifier. */
     // "noPropertyAccessFromIndexSignature": true,       /* Enforces using indexed accessors for keys declared using an indexed type. */
     "allowUnusedLabels": true /* Disable error reporting for unused labels. */,
-    /* Type Checking */
-    // "strict": true /* Enable all strict type-checking options. */,
     // "noImplicitAny": true /* Enable error reporting for expressions and declarations with an implied 'any' type. */,
     // "strictNullChecks": true,                         /* When type checking, take into account 'null' and 'undefined'. */
     // "strictFunctionTypes": true,                      /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */
@@ -74,11 +73,11 @@
 
     /* Emit */
     "declaration": true /* Generate .d.ts files from TypeScript and JavaScript files in your project. */,
-    // "declarationMap": true,                           /* Create sourcemaps for d.ts files. */
+    "declarationMap": true, /* Create sourcemaps for d.ts files. */
     "emitDeclarationOnly": true,
     // "inlineSourceMap": true,                          /* Include sourcemap files inside the emitted JavaScript. */
     // "outFile": "./",                                  /* Specify a file that bundles all outputs into one JavaScript file. If 'declaration' is true, also designates a file that bundles all .d.ts output. */
-    "outDir": "./dist", /* Specify an output folder for all emitted files. */
+    "outDir": "dist", /* Specify an output folder for all emitted files. */
     // "removeComments": true,                           /* Disable emitting comments. */
     // "noEmit": true,                                   /* Disable emitting files from a compilation. */
     // "importHelpers": true,                            /* Allow importing helper functions from tslib once per project, instead of including them per-file. */
@@ -108,8 +107,11 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
-  "include": ["packages/**/*", "packages/**/*.json"],
+  "include": ["packages/*/src/**/*", "packages/*/package.json"],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist",
+    "**/dist",
+    "**/*.test.ts"
   ]
 }
