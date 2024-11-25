@@ -1,5 +1,15 @@
 # monitor-types
 
+## 0.1.5
+
+### Patch Changes
+
+- updata
+- Updated dependencies
+  - @zhongjiayao/monitor-core@0.1.5
+  - @zhongjiayao/monitor-shared@0.1.5
+  - @zhongjiayao/monitor-utils@0.1.5
+
 ## 0.1.4
 
 ### Patch Changes

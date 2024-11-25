@@ -1,5 +1,14 @@
 # monitor-web
 
+## 0.1.5
+
+### Patch Changes
+
+- updata
+- Updated dependencies
+  - @zhongjiayao/monitor-browser@0.1.5
+  - @zhongjiayao/monitor-vue@0.1.5
+
 ## 0.1.4
 
 ### Patch Changes

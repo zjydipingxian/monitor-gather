@@ -1,6 +1,6 @@
 {
   "name": "@zhongjiayao/monitor-web-performance",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": true,
   "description": "前端稳定性监控 Web 性能监控",
   "author": "ZhongJiaYao",

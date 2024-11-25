@@ -1,6 +1,6 @@
 {
   "name": "@zhongjiayao/monitor-utils",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "前端稳定性监控 通用函数",
   "author": "ZhongJiaYao",
   "license": "ISC",
