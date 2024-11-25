@@ -36,7 +36,6 @@ const createRollupConfig = (target) => {
   const pkg = fs.readJSONSync(resolve(__dirname, `../packages/${target}/package.json`))
   // 入口文件路径
   const input = resolve(__dirname, `../packages/${target}/src/index.ts`)
-
   // 定义输出格式
   const formats = [
     {
@@ -71,15 +70,15 @@ const createRollupConfig = (target) => {
         sourceMap: !isProduction,
         declarationMap: !isProduction,
         resolveJsonModule: true,
-        // 添加这个配置来覆盖 tsconfig.json 中的 module 设置
-        module: 'ESNext',
-        // 确保输出符合 ES 模块规范
-        target: 'ESNext',
-        // 添加以下配置
-        moduleResolution: 'node',
-        allowSyntheticDefaultImports: true,
-        skipLibCheck: true,
-        preserveSymlinks: true
+         // 添加这个配置来覆盖 tsconfig.json 中的 module 设置
+         module: 'ESNext',
+         // 确保输出符合 ES 模块规范
+         target: 'ESNext',
+         // 添加以下配置
+         moduleResolution: 'node',
+         allowSyntheticDefaultImports: true,
+         skipLibCheck: true,
+         preserveSymlinks: true
       },
       outputToFilesystem: true  // 显式设置这个选项
       // declaration: false,  // 类型声明文件单独生成
@@ -185,33 +184,30 @@ const buildAllPackages = async () => {
   };
 
   try {
-    // 并行构建所有包
-    await Promise.all(
-      packagesDir.map(async (target) => {
-        try {
-          if (!shouldWatch) {
-            progressBar?.update(buildResults.success.length + buildResults.failed.length, {
-              package: target
-            });
-          }
-
-          const result = await buildPackage(target);
-
-          if (shouldWatch && result) {
-            watchers.push(result);
-          }
-
-          buildResults.success.push(target);
-        } catch (error) {
-          buildResults.failed.push({ target, error });
-          console.error(chalk.red(`\nFailed to build ${target}:`), error);
-        } finally {
-          if (!shouldWatch) {
-            progressBar?.increment();
-          }
+    for (const target of packagesDir) {
+      try {
+        if (!shouldWatch) {
+          progressBar?.update(buildResults.success.length + buildResults.failed.length, {
+            package: target
+          });
         }
-      })
-    );
+
+        const result = await buildPackage(target);
+
+        if (shouldWatch && result) {
+          watchers.push(result);
+        }
+
+        buildResults.success.push(target);
+      } catch (error) {
+        buildResults.failed.push({ target, error });
+        console.error(chalk.red(`\nFailed to build ${target}:`), error);
+      } finally {
+        if (!shouldWatch) {
+          progressBar?.increment();
+        }
+      }
+    }
 
     // 构建完成后的总结
     if (!shouldWatch) {

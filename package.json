@@ -24,7 +24,7 @@
     "dev": "node ./scripts/start.mjs",
     "ts-types": " tsc --emitDeclarationOnly --outDir dist",
     "es-build:dev": "node ./scripts/es-build-config.mjs dev",
-    "es-build:prod": "pnpm run clearDist &&node ./scripts/es-build-config.mjs prod"
+    "es-build:prod": "node ./scripts/es-build-config.mjs prod"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.9.2",
@@ -53,9 +53,9 @@
     "ora": "^8.0.1",
     "rimraf": "^6.0.1",
     "rollup": "^4.18.1",
-    "rollup-plugin-dts": "^5.0.0",
+    "rollup-plugin-dts": "5.0.0",
     "ts-node": "^10.9.2",
     "tslib": "^2.6.3",
-    "typescript": "^5.5.4"
+    "typescript": "^5.7.2"
   }
 }
