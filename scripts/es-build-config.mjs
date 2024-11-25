@@ -4,26 +4,27 @@ import { dirname } from 'path'
 import fs from 'fs-extra'
 import chalk from 'chalk';
 
+// Rollup 相关插件导入
 import { rollup, watch } from 'rollup'
-import json from '@rollup/plugin-json'
+import json from '@rollup/plugin-json'   // 处理 JSON 文件
 import typescript from '@rollup/plugin-typescript'; // 解析TypeScript
-import { nodeResolve } from '@rollup/plugin-node-resolve'; // 查找和打包node_modules中的第三方模
-import commonJS from '@rollup/plugin-commonjs'; // 查找和打包node_modules中的第三方模块
-import terser from '@rollup/plugin-terser'
+import { nodeResolve } from '@rollup/plugin-node-resolve'; // 解析 node_modules 中的依赖
+import commonJS from '@rollup/plugin-commonjs'; // 将 CommonJS 模块转换为 ES Module
+import terser from '@rollup/plugin-terser' // 代码压缩
 
+// 命令行相关工具
 import ora from 'ora'
 import minimist from 'minimist'
 import { SingleBar, Presets } from 'cli-progress'
 
+// 获取当前文件的目录路径
 const __dirname = dirname(fileURLToPath(import.meta.url))
-// 获取当前环境
+
+// 解析命令行参数，确定构建环境
 const args = minimist(process.argv.slice(2))
-const env = args._.length ? args._[0] : 'dev'
-const isProduction = env === 'prod'
-// 开发环境默认启用 watch，除非明确指定 --no-watch
-const shouldWatch = !isProduction
-
-
+const env = args._.length ? args._[0] : 'dev'  // 默认为开发环境
+const isProduction = env === 'prod'  // 是否为生产环境
+const shouldWatch = !isProduction  // 开发环境默认启用 watch，除非明确指定 --no-watch
 
 // 获取所有包
 const packagesDir = fs
@@ -35,9 +36,6 @@ const createRollupConfig = (target) => {
   const pkg = fs.readJSONSync(resolve(__dirname, `../packages/${target}/package.json`))
   // 入口文件路径
   const input = resolve(__dirname, `../packages/${target}/src/index.ts`)
-
-
-
 
   // 定义输出格式
   const formats = [
