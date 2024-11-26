@@ -33,3 +33,7 @@ dist-ssr
 packages/*/dist
 packages/*/node_modules
 packages/*/tsconfig.tsbuildinfo
+
+cache
+.temp
+.DS_Store
