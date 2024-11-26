@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'monitor',
   description: 'monitor-gather',
+  base: '/monitor-gather/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     // nav: [
